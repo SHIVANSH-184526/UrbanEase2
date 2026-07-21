@@ -1,0 +1,176 @@
+/* Authentication Pages Styles (css/auth.css) */
+
+.auth-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 70px);
+  padding: 2rem 1rem;
+  background: radial-gradient(circle at 50% 50%, rgba(37, 99, 235, 0.03) 0%, rgba(11, 15, 25, 0) 100%);
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 450px;
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  animation: authFadeIn 0.4s ease-out;
+}
+
+@keyframes authFadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.auth-header {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.auth-header h2 {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+.auth-header p {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.auth-nav-toggle {
+  display: flex;
+  border-radius: 8px;
+  background-color: var(--bg-secondary);
+  padding: 0.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.auth-toggle-btn {
+  flex: 1;
+  text-align: center;
+  padding: 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border-radius: 6px;
+  color: var(--text-secondary);
+  transition: background-color var(--transition-fast), color var(--transition-fast);
+}
+
+.auth-toggle-btn.active {
+  background-color: var(--card-bg);
+  color: var(--primary);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.auth-footer-links {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-top: 0.5rem;
+}
+
+.auth-footer-links a {
+  font-weight: 500;
+  transition: color var(--transition-fast);
+}
+
+.auth-footer-links a:hover {
+  color: var(--primary);
+  text-decoration: underline;
+}
+
+.auth-btn-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin-top: 0.5rem;
+}
+
+/* Alert Container inside Auth */
+.auth-alert {
+  padding: 0.8rem 1rem;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.auth-alert-error {
+  background-color: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  color: var(--color-error);
+}
+
+.auth-alert-success {
+  background-color: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.2);
+  color: var(--color-success);
+}
+
+/* User Account Profile page */
+.profile-container {
+  max-width: 800px;
+  margin: 3rem auto;
+  padding: 2.5rem;
+}
+
+.profile-header {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 2rem;
+  margin-bottom: 2rem;
+}
+
+.profile-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: var(--primary-glow);
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  font-family: var(--font-heading);
+  font-weight: 700;
+}
+
+.profile-meta h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.profile-meta p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
+.profile-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2.5rem;
+}
+
+@media (max-width: 768px) {
+  .profile-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,329 @@
+/* Interactive Map & Route Planner Layout (css/map.css) */
+
+.map-page-container {
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  height: calc(100vh - 130px); /* Adjusting for header and filters */
+  position: relative;
+}
+
+@media (max-width: 900px) {
+  .map-page-container {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 400px;
+    height: auto;
+  }
+}
+
+/* Sidebar Drawer Control */
+.map-sidebar-drawer {
+  background-color: var(--bg-primary);
+  border-right: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.map-drawer-section {
+  padding: 1.5rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.map-drawer-section:last-child {
+  border-bottom: none;
+}
+
+.map-drawer-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--primary);
+}
+
+/* POI Filters List */
+.filter-tags-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.filter-tag-checkbox {
+  display: none;
+}
+
+.filter-tag-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.5rem 0.8rem;
+  border-radius: 50px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-secondary);
+  color: var(--text-secondary);
+  transition: all var(--transition-fast);
+}
+
+.filter-tag-checkbox:checked + .filter-tag-label {
+  background-color: var(--primary);
+  color: white;
+  border-color: var(--primary);
+  box-shadow: 0 4px 10px var(--primary-glow);
+}
+
+/* Route Form Fields */
+.route-selector-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.route-input-wrapper {
+  position: relative;
+}
+
+.route-input-icon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+  width: 16px;
+  height: 16px;
+}
+
+.route-select-field {
+  width: 100%;
+  padding: 0.7rem 0.7rem 0.7rem 2.2rem;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+/* Route Mode Grid Selection */
+.route-modes-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.4rem;
+  margin-top: 1rem;
+}
+
+.route-mode-checkbox {
+  display: none;
+}
+
+.route-mode-label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
+  padding: 0.5rem 0.25rem;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  cursor: pointer;
+  background-color: var(--bg-secondary);
+  color: var(--text-secondary);
+  transition: all var(--transition-fast);
+  font-size: 0.7rem;
+  font-weight: 600;
+}
+
+.route-mode-label i {
+  width: 18px;
+  height: 18px;
+}
+
+.route-mode-checkbox:checked + .route-mode-label {
+  border-color: var(--primary);
+  color: var(--primary);
+  background-color: var(--primary-glow);
+}
+
+/* Map Layers Toggles */
+.layers-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.layer-toggle-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.layer-toggle-info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+/* Switch UI Control */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 44px;
+  height: 22px;
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--border-color);
+  transition: .3s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: .3s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: var(--primary);
+}
+
+input:checked + .slider:before {
+  transform: translateX(22px);
+}
+
+/* Route Output Card */
+.route-output-details {
+  background-color: var(--bg-secondary);
+  border-radius: 12px;
+  padding: 1rem;
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  border: 1px solid var(--border-color);
+}
+
+.route-output-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+}
+
+.route-output-value {
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.route-recommendation-badge {
+  background-color: var(--color-resolved-bg);
+  color: var(--color-resolved);
+  padding: 0.4rem;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  margin-top: 0.4rem;
+}
+
+/* Map Canvas Container */
+.map-canvas-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+#map {
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+/* Floating controls on Map */
+.map-floating-overlay {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  pointer-events: none;
+}
+
+.map-floating-btn {
+  pointer-events: auto;
+  background: var(--card-bg);
+  backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--card-border);
+  box-shadow: var(--card-shadow);
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-primary);
+  transition: all var(--transition-fast);
+}
+
+.map-floating-btn:hover {
+  background: var(--primary);
+  color: white;
+  border-color: var(--primary);
+}
+
+/* Custom Marker Tooltip Styles for Leaflet */
+.leaflet-popup-content-wrapper {
+  border-radius: 12px !important;
+  background: var(--card-bg) !important;
+  backdrop-filter: var(--glass-blur) !important;
+  border: 1px solid var(--card-border) !important;
+  box-shadow: var(--card-shadow) !important;
+  color: var(--text-primary) !important;
+}
+
+.leaflet-popup-tip {
+  background: var(--card-bg) !important;
+  border: 1px solid var(--card-border) !important;
+}
+
+.leaflet-popup-content h3 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+  color: var(--primary);
+}
+
+.leaflet-popup-content p {
+  font-size: 0.8rem;
+  margin: 0.2rem 0;
+  line-height: 1.4;
+  color: var(--text-secondary);
+}

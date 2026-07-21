@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page Not Found (404) | UrbanEase Smart City Portal</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;800&family=Inter:wght@400;600&display=swap">
+  <style>
+    :root {
+      --primary: #2563eb;
+      --bg-primary: #f8fafc;
+      --text-primary: #0f172a;
+      --text-secondary: #475569;
+      --card-bg: rgba(255, 255, 255, 0.7);
+      --card-border: rgba(226, 232, 240, 0.8);
+      --card-shadow: 0 8px 32px 0 rgba(148, 163, 184, 0.08);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 1.5rem;
+    }
+    .container {
+      max-width: 500px;
+      width: 100%;
+      text-align: center;
+      padding: 3rem 2rem;
+      background: var(--card-bg);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid var(--card-border);
+      box-shadow: var(--card-shadow);
+      border-radius: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
+    }
+    .icon {
+      font-size: 4rem;
+      background: rgba(37, 99, 235, 0.08);
+      color: var(--primary);
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    h1 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 5rem;
+      font-weight: 800;
+      line-height: 1;
+      background: linear-gradient(135deg, var(--text-primary) 30%, var(--primary) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    h2 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.6rem;
+      font-weight: 600;
+    }
+    p {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.75rem 1.5rem;
+      font-size: 0.95rem;
+      font-weight: 600;
+      border-radius: 8px;
+      background-color: var(--primary);
+      color: white;
+      text-decoration: none;
+      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.15);
+      transition: transform 0.2s ease, background-color 0.2s ease;
+    }
+    .btn:hover {
+      background-color: #1d4ed8;
+      transform: translateY(-2px);
+    }
+    .btn:active {
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="icon">🧭</div>
+    <h1>404</h1>
+    <h2>Resource Not Located</h2>
+    <p>The municipal portal page you are looking for has been relocated or is currently offline. Please check your spelling or return to the main gate.</p>
+    <a href="index.html#/" class="btn">Return to City Hall</a>
+  </div>
+</body>
+</html>
